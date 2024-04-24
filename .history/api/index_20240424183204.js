@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRoutes from './routes/user.route.js';
+import userR
 
 dotenv.config();
 
@@ -21,4 +21,6 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000!!');
 });
 
-app.use('/api/user', userRoutes);
+app.get('/test', (req, res) => {
+    res.json({ message: 'Api is working!' });
+});
