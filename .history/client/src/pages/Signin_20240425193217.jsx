@@ -18,7 +18,7 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure('Please fill all the fields'));
+      return setErrorMessage("Please fill out all fields.");
     }
     try {
       dispatch(signInStart());
@@ -31,6 +31,7 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
+      setLoading(false);
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");

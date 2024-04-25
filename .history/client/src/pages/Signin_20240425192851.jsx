@@ -1,12 +1,13 @@
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure('Please fill all the fields'));
+      return setErrorMessage("Please fill out all fields.");
     }
     try {
       dispatch(signInStart());
@@ -31,12 +32,14 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
+      setLoading(false);
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");
       }
     } catch (error) {
-      dispatch(signInFailure(error.message));
+      setErrorMessage(error.message);
+      setLoading(false);
     }
   };
 
