@@ -10,6 +10,5 @@ export default defineConfig({
         secure: false,
       },      
     },
-  },  
   plugins: [react()],
 })
