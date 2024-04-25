@@ -59,7 +59,7 @@ export const signin = async (req, res, next) => {
           { expiresIn: '1d' }
         );
 
-        const { password: pass, ...rest } = validUser._doc;
+        //const { password: pass, ...rest } = validUser._doc;
 
         res
             .status(200)

@@ -59,14 +59,14 @@ export const signin = async (req, res, next) => {
           { expiresIn: '1d' }
         );
 
-        const { password: pass, ...rest } = validUser._doc;
+        // const { password: pass, ...rest } = validUser._doc;
 
         res
             .status(200)
             .cookie('access_token', token, {
                 httpOnly: true,
         })
-        .json(rest);
+        .json('S');
      } catch (error) {
         next(error)
      }
