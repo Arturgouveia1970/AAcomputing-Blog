@@ -1,4 +1,4 @@
-import { Button, Label, TextInput } from "flowbite-react";
+import { Label, TextInput } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 export default function SignUp() {
@@ -21,7 +21,6 @@ export default function SignUp() {
             password or with Google.
           </p>
         </div>
-
         {/* right */}
         <div className="flex-1">
           <form className="flex flex-col gap-4">
@@ -31,25 +30,13 @@ export default function SignUp() {
             </div>
             <div>
               <Label value='Your email' />
-              <TextInput type="text" placeholder="example@email.com" id="email" />
+              <TextInput type="text" placeholder="Email" id="email" />
             </div>
             <div>
               <Label value='Your password' />
               <TextInput type="text" placeholder="Password" id="password" />
             </div>
-            <Button
-              gradientDuoTone='purpleToPink'
-              type='submit'              
-            >              
-              Sign Up
-            </Button>
           </form>
-          <div className='flex gap-2 text-sm mt-5'>
-            <span>Have an account?</span>
-            <Link to='/sign-in' className='text-blue-500'>
-              Sign In
-            </Link>
-          </div>
         </div>
 
       </div>
