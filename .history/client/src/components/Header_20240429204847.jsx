@@ -78,7 +78,7 @@ export default function Header() {
               <Dropdown.Item>Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
+            <Dropdown.Item on>Sign Out</Dropdown.Item>
           </Dropdown>
         ):(
           <Link to="/sign-in">
