@@ -101,7 +101,7 @@ export default function DashProfile() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-  // console.log(formData)
+  console.log()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -137,7 +137,6 @@ export default function DashProfile() {
       setUpdateUserError(error.message);
     }
   };
-
   const handleDeleteUser = async () => {
     setShowModal(false);
     try {
