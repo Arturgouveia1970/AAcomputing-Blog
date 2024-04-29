@@ -24,7 +24,14 @@ export default function Dashboard() {
           </div>
           {/* profile... */}
           {tab === 'profile' && <DashProfile />}
-          
+          {/* posts... */}
+          {tab === 'posts' && <DashPosts />}
+          {/* users */}
+          {tab === 'users' && <DashUsers />}
+          {/* comments  */}
+          {tab === 'comments' && <DashComments />}
+          {/* dashboard comp */}
+          {tab === 'dash' && <DashboardComp />}
         </div>
       );
 }
