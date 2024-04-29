@@ -296,7 +296,7 @@ export default function DashProfile() {
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteUser}>
-                Yes, I&apos;m sure
+                Yes, Im sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel

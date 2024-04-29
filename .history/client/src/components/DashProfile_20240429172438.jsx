@@ -37,7 +37,7 @@ export default function DashProfile() {
   const [formData, setFormData] = useState({});
   const filePickerRef = useRef();
   const dispatch = useDispatch();
-
+  
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -45,12 +45,10 @@ export default function DashProfile() {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
-  console.log(imageFile, imageFileUrl);
   useEffect(() => {
     if (imageFile) {
       uploadImage();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageFile]);
 
   const uploadImage = async () => {
@@ -296,7 +294,7 @@ export default function DashProfile() {
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteUser}>
-                Yes, I&apos;m sure
+                Yes, I'm sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel

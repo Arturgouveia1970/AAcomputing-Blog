@@ -50,8 +50,7 @@ export default function DashProfile() {
     if (imageFile) {
       uploadImage();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imageFile]);
+  }, [imageFile, uploadImage]);
 
   const uploadImage = async () => {
     // service firebase.storage {
@@ -296,7 +295,7 @@ export default function DashProfile() {
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteUser}>
-                Yes, I&apos;m sure
+                Yes, I'm sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel
