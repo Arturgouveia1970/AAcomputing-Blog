@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { app } from '../firebase';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -81,11 +81,7 @@ export default function CreatePost() {
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
-          <FileInput 
-            type='file' 
-            accept='image/*' 
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+          <FileInput type='file' accept='image/*' />
           <Button
             type='button' 
             gradientDuoTone='purpleToBlue' 

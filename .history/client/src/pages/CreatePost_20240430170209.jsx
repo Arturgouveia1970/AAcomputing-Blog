@@ -84,8 +84,7 @@ export default function CreatePost() {
           <FileInput 
             type='file' 
             accept='image/*' 
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+            />
           <Button
             type='button' 
             gradientDuoTone='purpleToBlue' 

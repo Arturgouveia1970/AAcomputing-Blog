@@ -82,10 +82,7 @@ export default function CreatePost() {
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
           <FileInput 
-            type='file' 
-            accept='image/*' 
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+            type='file' accept='image/*' />
           <Button
             type='button' 
             gradientDuoTone='purpleToBlue' 

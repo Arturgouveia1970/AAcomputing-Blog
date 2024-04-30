@@ -1,21 +1,19 @@
-import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
+import { Button, FileInput, Select, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { app } from '../firebase';
-// import { useNavigate } from 'react-router-dom';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreatePost() {
   const [file, setFile] = useState(null)
   const [formData, setFormData] = useState({});
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
-  // const [publishError, setPublishError] = useState(null);
+  const [publishError, setPublishError] = useState(null);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleUploadImage = async () => {
     try {
@@ -48,8 +46,6 @@ export default function CreatePost() {
       }
     );
     } catch (error) {
-      setImageUploadError('Image upload failed');
-      setImageUploadProgress(null);
       console.log(error);
     }
   }
@@ -81,39 +77,17 @@ export default function CreatePost() {
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
-          <FileInput 
-            type='file' 
-            accept='image/*' 
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+          <FileInput type='file' accept='image/*' />
           <Button
             type='button' 
             gradientDuoTone='purpleToBlue' 
             size='sm' 
             outline
             onClick={handleUploadImage}
-            disabled={imageUploadProgress}
           >
-            {imageUploadProgress ? (
-              <div className='w-16 h-16'>
-                <CircularProgressbar
-                  value={imageUploadProgress}
-                  text={`${imageUploadProgress || 0}%`}
-                />
-              </div>
-            ) : (
-              'Upload Image'
-            )}
+            UpLoad image
           </Button>
         </div>
-        {imageUploadError && <Alert color='failure'>{imageUploadError}</Alert>}
-        {formData.image && (
-          <img
-            src={formData.image}
-            alt='upload'
-            className='w-full h-72 object-cover'
-          />
-        )}
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
