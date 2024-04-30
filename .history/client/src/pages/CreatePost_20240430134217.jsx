@@ -1,6 +1,4 @@
-import { Button, FileInput, Select, TextInput } from 'flowbite-react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
 
 export default function CreatePost() {
   return (
@@ -33,23 +31,13 @@ export default function CreatePost() {
           <FileInput type='file' accept='image/*' />
           <Button
             type='button' 
-            gradientDuoTone='purpleToBlue' 
+            gradientDuoTone='purpletToBlue' 
             size='sm' 
             outline
           >
             UpLoad image
           </Button>
         </div>
-        <ReactQuill
-          theme='snow'
-          placeholder='Write something...'
-          className='h-72 mb-12'
-          required
-          // onChange={(value) => setFormData({ ...formData, content: value })}
-        />
-         <Button type='submit' gradientDuoTone='purpleToPink'>
-          Publish
-        </Button>
       </form>
     </div>
   )
