@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { app } from '../firebase';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -14,9 +14,9 @@ export default function CreatePost() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   // console.log(formData)
-  const [publishError, setPublishError] = useState(null);
+  // const [publishError, setPublishError] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleUploadImage = async () => {
     try {
@@ -150,11 +150,6 @@ export default function CreatePost() {
          <Button type='submit' gradientDuoTone='purpleToPink'>
           Publish
         </Button>
-        {publishError && (
-          <Alert className='mt-5' color='failure'>
-            {publishError}
-          </Alert>
-        )}
       </form>
     </div>
   )
