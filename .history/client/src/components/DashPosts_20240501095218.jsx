@@ -16,9 +16,9 @@ export default function DashPosts() {
         const data = await res.json();
         if (res.ok) {
           setUserPosts(data.posts);
-          if (data.posts.length < 9) {
-            setShowMore(false);
-          }
+		  if (data.posts.length < 9) {
+			setShowMore(false);
+		  }
         }
       } catch (error) {
         console.log(error.message);
@@ -105,10 +105,10 @@ export default function DashPosts() {
               </Table.Body>
             ))}
           </Table>
-          {showMore && (
+		  {showMore && (
             <button
               onClick={handleShowMore}
-              className="w-full text-teal-500 self-center text-sm py-7"
+              className='w-full text-teal-500 self-center text-sm py-7'
             >
               Show more
             </button>
