@@ -11,7 +11,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
 import CreatePost from "./pages/CreatePost";
 import UpdatePost from "./pages/UpdatePost";
-import PostPage from "./pages/postPage";
 
 function App() {  
 
@@ -32,7 +31,7 @@ function App() {
         </Route>
 
         <Route path="/projects" element={<Projects />} />
-        <Route path="/post/:postSlug" element={<PostPage />} />
+        <Route path="/post" element={<Projects />} />
       </Routes>
       <Footer ></Footer>
     </BrowserRouter>
