@@ -1,6 +1,5 @@
-import { Button, Modal, Table } from "flowbite-react";
+import { Modal, Table } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,6 @@ export default function DashPosts() {
   // console.log(userPosts);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const [postIdToDelete, setPostIdToDelete] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -45,28 +43,6 @@ export default function DashPosts() {
         if (data.posts.length < 9) {
           setShowMore(false);
         }
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const handleDeletePost = async () => {
-    setShowModal(false);
-    try {
-      const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
-        {
-          method: 'DELETE',
-        }
-      );
-      const data = await res.json();
-      if (!res.ok) {
-        console.log(data.message);
-      } else {
-        setUserPosts((prev) =>
-          prev.filter((post) => post._id !== postIdToDelete)
-        );
       }
     } catch (error) {
       console.log(error.message);
@@ -114,13 +90,7 @@ export default function DashPosts() {
                   </Table.Cell>
                   <Table.Cell>{post.category}</Table.Cell>
                   <Table.Cell>
-                    <span 
-					  className="font-medium text-red-500 hover:underline cursor-pointer"
-					  onClick={() => {
-						setShowModal(true);
-						setPostIdToDelete(post._id);
-					  }}
-					>
+                    <span className="font-medium text-red-500 hover:underline cursor-pointer">
                       Delete
                     </span>
                   </Table.Cell>
@@ -162,7 +132,7 @@ export default function DashPosts() {
               Are you sure you want to delete this post?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleDeletePost}>
+              <Button color='failure' onClick={handleDelete}>
                 Yes, I&apos;m sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>

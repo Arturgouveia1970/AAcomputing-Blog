@@ -10,7 +10,6 @@ export default function DashPosts() {
   // console.log(userPosts);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const [postIdToDelete, setPostIdToDelete] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -52,26 +51,8 @@ export default function DashPosts() {
   };
 
   const handleDeletePost = async () => {
-    setShowModal(false);
-    try {
-      const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
-        {
-          method: 'DELETE',
-        }
-      );
-      const data = await res.json();
-      if (!res.ok) {
-        console.log(data.message);
-      } else {
-        setUserPosts((prev) =>
-          prev.filter((post) => post._id !== postIdToDelete)
-        );
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+
+  }
 
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
@@ -118,7 +99,8 @@ export default function DashPosts() {
 					  className="font-medium text-red-500 hover:underline cursor-pointer"
 					  onClick={() => {
 						setShowModal(true);
-						setPostIdToDelete(post._id);
+						setPostIdToDelete(post._id)
+					  }
 					  }}
 					>
                       Delete
