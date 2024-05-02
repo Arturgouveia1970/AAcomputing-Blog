@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Comment from "./Comment";
 
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
+// import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 // eslint-disable-next-line react/prop-types
 export default function CommentSection({ postId }) {
@@ -211,7 +211,7 @@ export default function CommentSection({ postId }) {
                 color='failure'
                 onClick={() => handleDelete(commentToDelete)}
               >
-                Yes, I&apos;m sure
+                Yes, I'm sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel
