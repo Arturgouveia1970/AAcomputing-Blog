@@ -10,14 +10,14 @@ export default function About() {
             <p>
               Welcome to AAcomputing&apos;s Blog! This blog was created by Artur Gouveia
               as a personal project to share his thoughts and ideas with the
-              world. Artur is a passionate developer who loves to write about
+              world.  is a passionate developer who loves to write about
               technology, coding, and everything in between.
             </p>
 
             <p>
               On this blog, you&apos;ll find weekly articles and tutorials on topics
               such as web development, software engineering, and programming
-              languages. Artur is always learning and exploring new
+              languages. Sahand is always learning and exploring new
               technologies, so be sure to check back often for new content!
             </p>
 
