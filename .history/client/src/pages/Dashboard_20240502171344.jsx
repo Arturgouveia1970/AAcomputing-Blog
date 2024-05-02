@@ -32,7 +32,7 @@ export default function Dashboard() {
           {/* users...*/}
           {tab === 'users' && <DashUsers />}
            {/* comments  */}
-          {tab === 'comments' && <DashComments />}
+          {/* {tab === 'comments' && <DashComments />} */}
           {/* dashboard comp */}
           {/* {tab === 'dash' && <DashboardComp />} */}
         </div>
