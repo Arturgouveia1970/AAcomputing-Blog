@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import CommentSection from '../components/CommentSection';
-import PostCard from '../components/PostCard';
 // import PostCard from '../components/PostCard';
 
 export default function PostPage() {
@@ -12,7 +11,7 @@ export default function PostPage() {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
-  const [recentPosts, setRecentPosts] = useState(null);
+  // const [recentPosts, setRecentPosts] = useState(null);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -44,9 +43,9 @@ export default function PostPage() {
         const res = await fetch(`/api/post/getposts?limit=3`);
         // eslint-disable-next-line no-unused-vars
         const data = await res.json();
-        if (res.ok) {
-          setRecentPosts(data.posts);
-        }
+        // if (res.ok) {
+        //   setRecentPosts(data.posts);
+        // }
       };
       fetchRecentPosts();
     } catch (error) {

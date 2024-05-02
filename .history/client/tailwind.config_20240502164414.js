@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const flowbite = require("flowbite-react/tailwind");
 
 /** @type {import('tailwindcss').Config} */
@@ -14,6 +13,7 @@ export default {
   plugins: [
     flowbite.plugin(),
     require('tailwind-scrollbar'),
+    require('@tailwindcss/line-clamp'),
   ],
 }
 

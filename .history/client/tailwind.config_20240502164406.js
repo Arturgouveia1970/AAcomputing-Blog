@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const flowbite = require("flowbite-react/tailwind");
 
 /** @type {import('tailwindcss').Config} */
