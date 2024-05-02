@@ -35,9 +35,9 @@ export default function Home() {
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
         {posts && posts.length > 0 && (
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-6 text'>
             <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
-            <div className='flex flex-wrap gap-4 text-center'>
+            <div className='flex flex-wrap gap-4'>
               {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
