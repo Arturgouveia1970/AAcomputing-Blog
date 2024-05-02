@@ -77,8 +77,7 @@ export const editComment = async (req, res, next) => {
     res.status(200).json(editedComment);
   } catch (error) {
     next(error);
-  }
-};
+  } };
 
 // export const deleteComment = async (req, res, next) => {
 //   try {

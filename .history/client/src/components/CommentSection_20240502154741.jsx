@@ -181,7 +181,7 @@ export default function CommentSection({ postId }) {
               key={comment._id}
               comment={comment} 
               onLike={handleLike}
-              onEdit={handleEdit}  
+              onEd  
             />
           ))}
         </>

@@ -78,7 +78,7 @@ export const editComment = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
+ };
 
 // export const deleteComment = async (req, res, next) => {
 //   try {
