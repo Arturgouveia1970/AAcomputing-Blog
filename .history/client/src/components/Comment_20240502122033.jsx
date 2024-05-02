@@ -25,7 +25,7 @@ export default function Comment({ comment }) {
   }, [comment]);
 
   return (
-    <div className='flex p-4 border-d dark:border-gray-600 text-sm'>
+    <div clas>
       <div className="flex-shrink-0 mr-3">
         <img
           className="w-8 h-8 rounded-full bg-gray-200"
@@ -42,8 +42,7 @@ export default function Comment({ comment }) {
             {moment(comment.createdAt).fromNow()}
           </span>
         </div>
-        <p className='text-gray-500 pb-2'>{comment.content}</p>
-      </div>  
+        </div>
     </div>
   );
 }

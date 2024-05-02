@@ -1,15 +1,13 @@
 /* eslint-disable react/prop-types */
 import moment from 'moment';
 import { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
 // import { set } from "mongoose";
 
 export default function Comment({ comment }) {
   const [user, setUser] = useState({});
-  const { currentUser } = useSelector((state) => state.user);
+  console.log()
   console.log(user);
-
-   useEffect(() => {
+  useEffect(() => {
     const getUser = async () => {
       try {
         const res = await fetch(`/api/user/${comment.userId}`);
@@ -25,7 +23,7 @@ export default function Comment({ comment }) {
   }, [comment]);
 
   return (
-    <div className='flex p-4 border-d dark:border-gray-600 text-sm'>
+    <div>
       <div className="flex-shrink-0 mr-3">
         <img
           className="w-8 h-8 rounded-full bg-gray-200"
@@ -42,8 +40,7 @@ export default function Comment({ comment }) {
             {moment(comment.createdAt).fromNow()}
           </span>
         </div>
-        <p className='text-gray-500 pb-2'>{comment.content}</p>
-      </div>  
+        </div>
     </div>
   );
 }

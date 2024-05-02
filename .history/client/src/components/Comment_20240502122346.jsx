@@ -42,8 +42,8 @@ export default function Comment({ comment }) {
             {moment(comment.createdAt).fromNow()}
           </span>
         </div>
-        <p className='text-gray-500 pb-2'>{comment.content}</p>
-      </div>  
+        <p></p>
+        </div>
     </div>
   );
 }

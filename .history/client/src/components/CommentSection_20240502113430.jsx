@@ -15,7 +15,7 @@ export default function CommentSection({ postId }) {
   //   const [showModal, setShowModal] = useState(false);
   //   const [commentToDelete, setCommentToDelete] = useState(null);
   //  const navigate = useNavigate();
-  console.log(comments)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (comment.length > 200) {
