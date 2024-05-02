@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Button, Textarea } from "flowbite-react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Comment from "./Comment";
 
 // import { HiOutlineExclamationCircle } from 'react-icons/hi';

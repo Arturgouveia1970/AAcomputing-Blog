@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Button, Textarea } from "flowbite-react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Comment from "./Comment";
 
 // import { HiOutlineExclamationCircle } from 'react-icons/hi';
@@ -14,7 +14,7 @@ export default function CommentSection({ postId }) {
   const [comments, setComments] = useState([]);
   //   const [showModal, setShowModal] = useState(false);
   //   const [commentToDelete, setCommentToDelete] = useState(null);
-  const navigate = useNavigate();
+  //  const navigate = useNavigate();
   console.log(comments)
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -179,9 +179,7 @@ export default function CommentSection({ postId }) {
           {comments.map((comment) => (
             <Comment
               key={comment._id}
-              comment={comment} 
-              onLike={handleLike}  
-            />
+              comment={comment} />
           ))}
         </>
       )}
