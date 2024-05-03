@@ -13,7 +13,6 @@ import CreatePost from "./pages/CreatePost";
 import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./pages/postPage";
 import ScrollToTop from "./components/ScrollToTop";
-import Search from "./pages/Search";
 
 function App() {  
 

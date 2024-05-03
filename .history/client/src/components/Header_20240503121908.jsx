@@ -1,5 +1,5 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,7 +11,7 @@ export default function Header() {
     const path = useLocation().pathname;
     const location = useLocation();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    
     const { currentUser } = useSelector((state) => state.user);
     const { theme } = useSelector((state) => state.theme);
     const [searchTerm, setSearchterm] = useState('');
